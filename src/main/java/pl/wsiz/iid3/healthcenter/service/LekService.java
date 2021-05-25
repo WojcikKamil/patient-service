@@ -18,4 +18,12 @@ public class LekService {
         }
         return new Lek(nazwa);
     }
+
+    public String getAllLek() {
+        String allMedicine = "Lek\tProducent\n";
+        for (Lek lek: leki) {
+            allMedicine = allMedicine+lek.getNazwa()+"\t"+lek.getProducent()+"\n";
+        }
+        return allMedicine;
+    }
 }
