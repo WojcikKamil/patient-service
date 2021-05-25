@@ -14,6 +14,14 @@ public class Osoba {
     private String imieMatki;
     private Date dataUrodzenia;
 
+    public Osoba(String imie, String nazwisko, String miejscowosc, String nrTelefonu, String pesel) {
+        this.imie = imie;
+        this.nazwisko = nazwisko;
+        this.miejscowosc = miejscowosc;
+        this.nrTelefonu = nrTelefonu;
+        this.pesel = pesel;
+    }
+
     public int getWiek(){
         // br - rok urodzenia
         int wiek = 20;

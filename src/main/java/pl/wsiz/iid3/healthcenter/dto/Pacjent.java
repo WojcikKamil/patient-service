@@ -17,4 +17,8 @@ public class Pacjent extends Osoba{
     public Pacjent(String imie, String nazwisko, String pesel){
         super(imie, nazwisko, pesel);
     }
+
+    public Pacjent(String imie, String nazwisko, String miejscowosc, String nrTelefonu, String pesel) {
+        super(imie, nazwisko, miejscowosc, nrTelefonu, pesel);
+    }
 }
