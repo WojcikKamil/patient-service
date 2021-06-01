@@ -34,10 +34,16 @@ public class Osoba {
         return true;
     }
 
-    public Osoba(String imie, String nazwisko, String pesel) {
+    public Osoba(String imie, String nazwisko, String pesel, String miejscowosc) {
         this.imie = imie;
         this.nazwisko = nazwisko;
         this.pesel = pesel;
+        this.miejscowosc = miejscowosc;
+    }
+
+    public Osoba(String imie, String nazwisko) {
+        this.imie = imie;
+        this.nazwisko = nazwisko;
     }
 
     public Osoba(String pesel) {

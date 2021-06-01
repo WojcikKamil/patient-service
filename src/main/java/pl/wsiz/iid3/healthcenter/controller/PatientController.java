@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import pl.wsiz.iid3.healthcenter.service.PatientService;
 
@@ -20,9 +21,21 @@ public class PatientController extends PatientService{
         return "Witamy";
     }
 
-    @GetMapping(path="/allPatient")
+    @GetMapping(path="/age")
     @ResponseBody
-    public String getAllMedicine(){
-        return patientService.getAllPatient();
+    public String age(@RequestParam(required = true) int yearNow, @RequestParam int yearBirth) {
+        return Integer.toString(yearNow-yearBirth);
+    }
+
+    @GetMapping(path="/all")
+    @ResponseBody
+    public String patientId(@RequestParam Long idP){
+        return (patientService.findbyId(idP)).toString();
+    }
+
+    @GetMapping(path="/lastname")
+    @ResponseBody
+    public String patientName(@RequestParam String lname){
+        return patientService.findByName(lname);
     }
 }
