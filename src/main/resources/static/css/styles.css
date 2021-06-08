@@ -1,0 +1,20 @@
+body {
+    background-color: #4287f5;
+    font-family: Verdana;
+}
+
+h1{
+    color: white;
+    text-align: center;
+}
+
+p, tr, td {
+    color: white;
+    text-align: center;
+    border: 2px dotted white;
+    font-size: 20px;
+}
+
+h4{
+    color: white;
+}
