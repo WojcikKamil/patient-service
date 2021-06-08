@@ -23,9 +23,24 @@ public class PatientService {
         return new Pacjent("None", "None");
     }
 
-    public String findByName(String name){
+    public List<PatientEntity> findByLastName(String name){
         List<PatientEntity> rs = patientRepository.findAllByLastName(name);
-        return rs.toString();
+        return rs;
+    }
+
+    public List<PatientEntity> findByFirstName(String name){
+        List<PatientEntity> rs = patientRepository.findAllByFirstName(name);
+        return rs;
+    }
+
+    public List<PatientEntity> findByPesel(String pesel){
+        List<PatientEntity> rs = patientRepository.findByPesel(pesel);
+        return rs;
+    }
+
+    public List<PatientEntity> findAll() {
+        List<PatientEntity> rs = patientRepository.findAll();
+        return rs;
     }
     /*private Pacjent[] pacjenci = {
             new Pacjent("Janusz","Januszewski", "Rzeszów","555555555","98010111111"),
