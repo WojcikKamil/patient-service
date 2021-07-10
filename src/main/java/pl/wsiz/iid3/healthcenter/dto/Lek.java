@@ -1,13 +1,19 @@
 package pl.wsiz.iid3.healthcenter.dto;
 
 public class Lek {
+    private Long id;
     private String nazwa;
-    private double cena;
-    private boolean czyNaRecepte;
+    private Integer cena;
     private String producent;
 
     public Lek(String nazwa, String producent) {
         this.nazwa = nazwa;
+        this.producent = producent;
+    }
+
+    public Lek(String nazwa, Integer cena, String producent) {
+        this.nazwa = nazwa;
+        this.cena = cena;
         this.producent = producent;
     }
 
@@ -23,20 +29,12 @@ public class Lek {
         this.nazwa = nazwa;
     }
 
-    public double getCena() {
+    public Integer getCena() {
         return cena;
     }
 
-    public void setCena(double cena) {
+    public void setCena(Integer cena) {
         this.cena = cena;
-    }
-
-    public boolean isCzyNaRecepte() {
-        return czyNaRecepte;
-    }
-
-    public void setCzyNaRecepte(boolean czyNaRecepte) {
-        this.czyNaRecepte = czyNaRecepte;
     }
 
     public String getProducent() {
@@ -45,5 +43,13 @@ public class Lek {
 
     public void setProducent(String producent) {
         this.producent = producent;
+    }
+
+    @Override
+    public String toString() {
+        return "Lek: " +
+                "nazwa: " + nazwa +
+                ", producent: " + producent +
+                ", cena: " + cena;
     }
 }
