@@ -78,7 +78,7 @@ public class PatientController extends PatientService{
     @GetMapping(path="/firstnamesWeb") //po fname
     public String patientFNameWeb (final ModelMap model, @RequestParam String fname){
         List<PatientEntity> patientByFirstName = patientService.findByFirstName(fname);
-        model.addAttribute("patientsByName", patientByFirstName);
+        model.addAttribute("patientsByFirstName", patientByFirstName);
         return "pacjentByFirstName.html";
     }
 
